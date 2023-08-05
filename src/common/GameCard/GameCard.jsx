@@ -19,7 +19,7 @@ const GameCard = ({ img_src, data }) => {
 
   const handleJoin = (e) => {
     if (data == null || data.rid == null || data.rid == "") return;
-    fetch("http://157.245.149.209:5678/room/join", {
+    fetch("https://iaihackathon.engineer:5678/room/join", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),

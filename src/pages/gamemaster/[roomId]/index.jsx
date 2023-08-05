@@ -19,7 +19,7 @@ const GameMaster = () => {
   const [qNum, setQNum] = useState(1);
 
   useState(() => {
-    fetch("http://157.245.149.209:5678/room/get", {
+    fetch("https://iaihackathon.engineer:5678/room/get", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -38,7 +38,7 @@ const GameMaster = () => {
 
         setQNum(totQues);
 
-        fetch("http://157.245.149.209:5678/room/userlist", {
+        fetch("https://iaihackathon.engineer:5678/room/userlist", {
           method: "POST",
           body: JSON.stringify({
             uid: localStorage.getItem("uid"),

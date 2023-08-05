@@ -24,7 +24,7 @@ export async function register(email, password, userInfo) {
       // Signed in
       const user = userCred.user;
       localStorage.setItem("uid", user.uid);
-      fetch("http://157.245.149.209:5678/user/init", {
+      fetch("https://iaihackathon.engineer:5678/user/init", {
         method: "POST",
         body: JSON.stringify({
           uid: user.uid,

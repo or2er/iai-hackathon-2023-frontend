@@ -63,10 +63,13 @@ const Summary = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await axios.post("http://157.245.149.209:5678/game/summary", {
-        uid: localStorage.getItem("uid"),
-        data: router.query.roomId,
-      });
+      const res = await axios.post(
+        "https://iaihackathon.engineer:5678/game/summary",
+        {
+          uid: localStorage.getItem("uid"),
+          data: router.query.roomId,
+        }
+      );
       setResult(res.data.data);
     }
 

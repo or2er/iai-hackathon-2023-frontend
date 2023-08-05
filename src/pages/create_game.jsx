@@ -86,10 +86,10 @@ const CreateGame = () => {
 
   const handleSubmit = async () => {
     const res = await axios.get(
-      `http://157.245.149.209:8000/data/${testid}/answers`
+      `https://iaihackathon.engineer:8000/data/${testid}/answers`
     );
 
-    fetch("http://157.245.149.209:5678/room/create", {
+    fetch("https://iaihackathon.engineer:5678/room/create", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -125,7 +125,7 @@ const CreateGame = () => {
       config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "http://157.245.149.209:8000/api/quiz2quiz",
+        url: "https://iaihackathon.engineer:8000/api/quiz2quiz",
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -135,7 +135,7 @@ const CreateGame = () => {
       config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: `http://157.245.149.209:8000/api/doc2quiz?num=${maxQuestion}`,
+        url: `https://iaihackathon.engineer:8000/api/doc2quiz?num=${maxQuestion}`,
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -157,7 +157,7 @@ const CreateGame = () => {
             console.log("inside: ", value);
             console.log("inside: ", value["testid"]);
             const res = await axios.get(
-              `http://157.245.149.209:8000/data/${value.testid}/progress`
+              `https://iaihackathon.engineer:8000/data/${value.testid}/progress`
             );
             console.log(res.data);
             setProgress(res.data.value * 100);

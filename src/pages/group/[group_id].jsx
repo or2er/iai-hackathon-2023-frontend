@@ -63,7 +63,7 @@ const Group = () => {
 
   // useEffect
   React.useEffect(() => {
-    fetch("http://157.245.149.209:5678/group", {
+    fetch("https://iaihackathon.engineer:5678/group", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -86,7 +86,7 @@ const Group = () => {
         }
       });
 
-    fetch("http://157.245.149.209:5678/group/properties", {
+    fetch("https://iaihackathon.engineer:5678/group/properties", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),

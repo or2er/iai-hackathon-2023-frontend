@@ -490,15 +490,18 @@ export const GameProvider = ({ children }) => {
     );
 
     async function getData() {
-      const res0 = await axios.post(`http://157.245.149.209:5678/room/get`, {
-        uid: localStorage.getItem("uid"),
-        data: router.query.roomId,
-      });
+      const res0 = await axios.post(
+        `https://iaihackathon.engineer:5678/room/get`,
+        {
+          uid: localStorage.getItem("uid"),
+          data: router.query.roomId,
+        }
+      );
 
       const room = res0.data.data;
 
       const res1 = await axios.get(
-        `http://157.245.149.209:8000/data/${room.testid}/questions`
+        `https://iaihackathon.engineer:8000/data/${room.testid}/questions`
       );
 
       setRoom(room);

@@ -33,7 +33,7 @@ const Index = () => {
   };
 
   React.useEffect(() => {
-    fetch("http://157.245.149.209:5678/user/get", {
+    fetch("https://iaihackathon.engineer:5678/user/get", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -49,7 +49,7 @@ const Index = () => {
         setuData(json.data);
       });
 
-    fetch("http://157.245.149.209:5678/storage/get", {
+    fetch("https://iaihackathon.engineer:5678/storage/get", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -64,7 +64,7 @@ const Index = () => {
         setStorage(json.data);
       });
 
-    fetch("http://157.245.149.209:5678/group/all/rooms", {
+    fetch("https://iaihackathon.engineer:5678/group/all/rooms", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),

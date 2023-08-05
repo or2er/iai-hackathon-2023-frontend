@@ -21,7 +21,7 @@ const GroupCard = ({ img_src, title, description, code, data }) => {
 
   if (data) {
     useEffect(() => {
-      fetch("http://157.245.149.209:5678/room/get", {
+      fetch("https://iaihackathon.engineer:5678/room/get", {
         method: "POST",
         body: JSON.stringify({
           uid: localStorage.getItem("uid"),
@@ -59,7 +59,7 @@ const GroupCard = ({ img_src, title, description, code, data }) => {
 
     const handleJoin = (e) => {
       if (data == null || data.rid == null || data.rid == "") return;
-      fetch("http://157.245.149.209:5678/room/join", {
+      fetch("https://iaihackathon.engineer:5678/room/join", {
         method: "POST",
         body: JSON.stringify({
           uid: localStorage.getItem("uid"),
