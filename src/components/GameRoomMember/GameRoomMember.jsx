@@ -8,7 +8,7 @@ import Image from "next/image";
 // Images
 import cat from "../../assets/images/cat.jpg";
 import city from "../../assets/images/city.gif";
-import image1 from '../../assets/images/bg.jpg'
+import image1 from "../../assets/images/bg.jpg";
 
 const Join = ({ onStart, data, role, leaveGame, rid, roomData }) => {
   return (
@@ -52,7 +52,6 @@ const Join = ({ onStart, data, role, leaveGame, rid, roomData }) => {
         }}
       >
         {data.map((item, key) => {
-          console.log('in gen:',item)
           return (
             <Grid
               xs={4}
@@ -64,13 +63,19 @@ const Join = ({ onStart, data, role, leaveGame, rid, roomData }) => {
               }}
               key={key}
             >
-              <Image alt='ava' src={image1} width={120} height={120} style={{
-                width: '64px',
-                height: 'auto',
-                aspectRatio: '1/1',
-                borderRadius: '100px',
-                border: `2px solid #FFF`
-              }} />
+              <Image
+                alt="ava"
+                src={image1}
+                width={120}
+                height={120}
+                style={{
+                  width: "64px",
+                  height: "auto",
+                  aspectRatio: "1/1",
+                  borderRadius: "100px",
+                  border: `2px solid #FFF`,
+                }}
+              />
               <Typography
                 variant="body1"
                 sx={{
@@ -83,49 +88,46 @@ const Join = ({ onStart, data, role, leaveGame, rid, roomData }) => {
                 {item.user.uname}
               </Typography>
             </Grid>
-          )
+          );
         })}
-
       </Grid>
-      {role == 'Admin' ?
-        (
-          <Button
-            variant="contained"
-            onClick={onStart}
-            sx={{
-              backgroundColor: "#fff",
-              borderRadius: "5px",
-              padding: "12px 24px",
-              boxShadow:
-                "0px 1px 2px 0px rgba(0, 0, 0, 0.24), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)",
-              color: "#000",
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "bold",
-              marginTop: "32px",
-            }}
-          >
-            Start Game
-          </Button>
-        ) : (
-          <Button
-            variant="contained"
-            onClick={leaveGame}
-            sx={{
-              backgroundColor: "#fff",
-              borderRadius: "5px",
-              padding: "12px 24px",
-              boxShadow:
-                "0px 1px 2px 0px rgba(0, 0, 0, 0.24), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)",
-              color: "#000",
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "bold",
-              marginTop: "32px",
-            }}
-          >
-            Leave Game
-          </Button>
-        )}
-
+      {role == "Admin" ? (
+        <Button
+          variant="contained"
+          onClick={onStart}
+          sx={{
+            backgroundColor: "#fff",
+            borderRadius: "5px",
+            padding: "12px 24px",
+            boxShadow:
+              "0px 1px 2px 0px rgba(0, 0, 0, 0.24), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)",
+            color: "#000",
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: "bold",
+            marginTop: "32px",
+          }}
+        >
+          Start Game
+        </Button>
+      ) : (
+        <Button
+          variant="contained"
+          onClick={leaveGame}
+          sx={{
+            backgroundColor: "#fff",
+            borderRadius: "5px",
+            padding: "12px 24px",
+            boxShadow:
+              "0px 1px 2px 0px rgba(0, 0, 0, 0.24), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)",
+            color: "#000",
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: "bold",
+            marginTop: "32px",
+          }}
+        >
+          Leave Game
+        </Button>
+      )}
     </>
   );
 };
