@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const ws_url = "157.245.149.209:3456";
+const ws_url = "iaihackathon.engineer:3456";
 export const socket = io(ws_url);
 console.log("WebSocket initialized at: ", ws_url);
 
