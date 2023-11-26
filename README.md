@@ -2,9 +2,7 @@
 <h1 align="center">
   <br>
 <!-- <img src="./read_me_src/testeria.png" alt="Testeria" width="200"> -->
-  <br>
-  Testeria
-  <br>
+  <a href="https://www.testeria.games/dashboard">Testeria</a>
 </h1>
 
 <h4 align="center">A website provides tools for teachers to automatically converted question files to RPG games. built on top of <a href="https://nextjs.org/" target="_blank">NextJS</a>.</h4>
