@@ -64,7 +64,7 @@ const Summary = () => {
   useEffect(() => {
     async function fetchData() {
       const res = await axios.post(
-        "https://iaihackathon.engineer:5678/game/summary",
+        process.env.NEXT_PUBLIC_BACKEND_URI + "/game/summary",
         {
           uid: localStorage.getItem("uid"),
           data: router.query.roomId,

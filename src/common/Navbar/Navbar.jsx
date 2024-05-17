@@ -59,11 +59,6 @@ export const Navbar = ({ userData }) => {
     setAnchorElNav(null);
   };
 
-  const handleLogOut = () => {
-    logout();
-    router.push("/");
-  };
-
   if (!removeRoutes.includes(router.pathname)) {
     return (
       <nav>

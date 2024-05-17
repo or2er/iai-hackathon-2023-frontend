@@ -63,7 +63,7 @@ const Group = () => {
 
   // useEffect
   React.useEffect(() => {
-    fetch("https://iaihackathon.engineer:5678/group", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/group", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -86,7 +86,7 @@ const Group = () => {
         }
       });
 
-    fetch("https://iaihackathon.engineer:5678/group/properties", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/group/properties", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),

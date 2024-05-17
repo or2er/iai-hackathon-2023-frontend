@@ -33,7 +33,7 @@ const Index = () => {
   };
 
   React.useEffect(() => {
-    fetch("https://iaihackathon.engineer:5678/user/get", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/user/get", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -49,7 +49,7 @@ const Index = () => {
         setuData(json.data);
       });
 
-    fetch("https://iaihackathon.engineer:5678/storage/get", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/storage/get", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -64,7 +64,7 @@ const Index = () => {
         setStorage(json.data);
       });
 
-    fetch("https://iaihackathon.engineer:5678/group/all/rooms", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/group/all/rooms", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -77,7 +77,9 @@ const Index = () => {
       .then((json) => {
         // console.log("all rooms: ", json.data);
         // console.log("all rooms", Object.values(json.data));
-        setRoom(Object.values(json.data));
+        if (json.data) {
+          setRoom(Object.values(json.data));
+        }
       });
   }, []);
   if (uData) {

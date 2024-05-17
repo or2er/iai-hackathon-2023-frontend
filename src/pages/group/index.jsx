@@ -44,7 +44,7 @@ const GroupPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    fetch("https://iaihackathon.engineer:5678/group/all", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/group/all", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
@@ -96,7 +96,7 @@ const GroupPage = () => {
       members: member,
       code: code,
     };
-    fetch("https://iaihackathon.engineer:5678/group/create", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/group/create", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),

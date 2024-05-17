@@ -491,7 +491,7 @@ export const GameProvider = ({ children }) => {
 
     async function getData() {
       const res0 = await axios.post(
-        `https://iaihackathon.engineer:5678/room/get`,
+        process.env.NEXT_PUBLIC_BACKEND_URI + `/room/get`,
         {
           uid: localStorage.getItem("uid"),
           data: router.query.roomId,
@@ -501,12 +501,13 @@ export const GameProvider = ({ children }) => {
       const room = res0.data.data;
 
       const res1 = await axios.get(
-        `https://iaihackathon.engineer:8000/data/${room.testid}/questions`
+        process.env.NEXT_PUBLIC_FLASK_URI + `/data/${room.testid}/questions`
       );
 
       setRoom(room);
 
       let questions = res1.data.questions;
+      console.log('questions', questions)
       questions = questions.map((q, i) => ({ ...q, id: i }));
       questions = shuffle(questions);
       setQuestions(questions);

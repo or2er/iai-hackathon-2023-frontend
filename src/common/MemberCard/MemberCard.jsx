@@ -14,7 +14,7 @@ const MemberCard = ({ number, isButton, data }) => {
     }
 
     useEffect(() => {
-      fetch("https://iaihackathon.engineer:5678/user/get", {
+      fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/user/get", {
         method: "POST",
         body: JSON.stringify({
           uid: data.uid,

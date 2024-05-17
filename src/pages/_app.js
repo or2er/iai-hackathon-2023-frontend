@@ -16,6 +16,7 @@ const theme = createTheme();
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  // console.log('test env: ', process.env.NEXT_PUBLIC_BACKEND_URI)
 
   return (
     <ThemeProvider theme={theme}>

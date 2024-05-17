@@ -21,7 +21,7 @@ const Join = () => {
 
   const handleJoin = (e) => {
     if (code == null || code == "") return;
-    fetch("https://iaihackathon.engineer:5678/room/join", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_URI + "/room/join", {
       method: "POST",
       body: JSON.stringify({
         uid: localStorage.getItem("uid"),
